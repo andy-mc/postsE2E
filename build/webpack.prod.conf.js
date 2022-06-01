@@ -12,7 +12,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
-const env = process.env.NODE_ENV
+const env = require('../config/prod.env')
+const envFile = process.env.NODE_ENV
 
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -30,7 +31,7 @@ const webpackConfig = merge(baseWebpackConfig, {
   },
   plugins: [
     new Dotenv({
-      path: path.resolve(__dirname, '..', 'config', `${env}.env`), // load this now instead of the ones in '.env'
+      path: path.resolve(__dirname, '..', 'config', `${envFile}.env`), // load this now instead of the ones in '.env'
       systemvars: true, // load all the predefined 'process.env' variables which will trump anything local per dotenv specs.
       silent: false // hide any errors
     }),

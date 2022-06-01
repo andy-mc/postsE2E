@@ -10,7 +10,8 @@
     "lint-fix": "standard --fix",
     "start": "npm run dev",
     "build": "cross-env NODE_ENV=production node build/build.js",
-    "test": "cross-env NODE_ENV=test node build/build.js"
+    "build-test": "cross-env NODE_ENV=test node build/build.js",
+    "test-server": "pushstate-server -d ./dist"
   },
   "dependencies": {
     "firebase": "^4.13.1",
@@ -47,6 +48,7 @@
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.8",
     "postcss-url": "^7.2.1",
+    "pushstate-server": "^3.1.0",
     "rimraf": "^2.6.0",
     "sass-loader": "^7.0.1",
     "semver": "^5.3.0",
