@@ -10,8 +10,9 @@
     "lint-fix": "standard --fix",
     "start": "npm run dev",
     "build": "cross-env NODE_ENV=production node build/build.js",
-    "build-test": "cross-env NODE_ENV=test node build/build.js",
-    "test-server": "pushstate-server -d ./dist"
+    "build:test": "cross-env NODE_ENV=test node build/build.js",
+    "test:server": "pushstate-server -d ./dist",
+    "test:init": "npm run build:test && npm run test:server"
   },
   "dependencies": {
     "firebase": "^4.13.1",
