@@ -14,7 +14,8 @@
     "cypress:open": "cypress open --project ./test",
     "test:server": "pushstate-server -d ./dist",
     "test:init": "npm run build:test && npm run test:server",
-    "test:dev": "npm run build:test && run-p --race test:server cypress:open"
+    "test:build:dev": "npm run build:test && run-p --race test:server cypress:open",
+    "test:dev": "run-p --race test:server cypress:open"
   },
   "dependencies": {
     "firebase": "^4.13.1",
