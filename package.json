@@ -11,14 +11,15 @@
     "start": "npm run dev",
     "build": "cross-env NODE_ENV=production node build/build.js",
     "build:test": "cross-env NODE_ENV=test node build/build.js",
+    "db:reset": "node ./build/clean-test-db.js",
     "cypress:open": "cypress open --project ./test",
     "test:server": "pushstate-server -d ./dist",
-    "test:init": "npm run build:test && npm run test:server",
-    "test:build:dev": "npm run build:test && run-p --race test:server cypress:open",
-    "test:dev": "run-p --race test:server cypress:open"
+    "test:dev": "run-p --race test:server cypress:open",
+    "test:build:dev": "npm run build:test && npm run test:dev"
   },
   "dependencies": {
     "firebase": "^4.13.1",
+    "firebase-admin": "^8.11.0",
     "moment": "^2.22.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
