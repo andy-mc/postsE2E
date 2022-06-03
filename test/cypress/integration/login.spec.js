@@ -13,6 +13,7 @@ describe("Login foooo", () => {
   it("should register a user", () => {
     cy.get("@userFixture").then((user) => {
       cy.createUser(user);
+      cy.screenshot("user-created")
     })
   })
 
@@ -20,6 +21,7 @@ describe("Login foooo", () => {
     cy.get("@userFixture").then((user) => {
       cy.login(user.email, user.password)
       cy.contains("a", "Dashboard").should('be.visible')
+      cy.screenshot("login-success", {blackout: ['#email1']})
     })
   })
 
@@ -28,6 +30,7 @@ describe("Login foooo", () => {
       cy.login(user.email, user.wrong_password)
       cy.get(".error-msg").should('exist')
       cy.get(".error-msg").should('be.visible')
+      cy.screenshot("login-failed", {blackout: ['#email1']})
     })
   })
 })
