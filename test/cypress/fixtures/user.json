@@ -1,0 +1,7 @@
+{
+  "name": "Usuario de prueba",
+  "company": "Compañia de prueba",
+  "email": "test@test.com",
+  "password": "secret",
+  "wrong_password": "wrong_secret"
+}
