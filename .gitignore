@@ -13,3 +13,4 @@ config/test.env
 *.env
 config/firebase-admin-keys.json
 test/cypress/screenshots
+test/cypress/videos
